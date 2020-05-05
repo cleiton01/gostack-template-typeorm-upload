@@ -42,7 +42,7 @@ transactionsRouter.delete('/:id', async (request, response) => {
 });
 
 transactionsRouter.post('/import', async (request, response) => {
-  // TODO
+  response.json({nok:"nok"});
 });
 
 export default transactionsRouter;
