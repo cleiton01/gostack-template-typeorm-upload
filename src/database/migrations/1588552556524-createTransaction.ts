@@ -12,6 +12,7 @@ export default class createTransaction1588552556524 implements MigrationInterfac
               type:'varchar',
               isPrimary: true,
               generationStrategy: 'uuid',
+              default:'uuid_generate_v4()',
             },
             {
               name:'title',
@@ -56,6 +57,7 @@ export default class createTransaction1588552556524 implements MigrationInterfac
               type:'varchar',
               isPrimary: true,
               generationStrategy: 'uuid',
+              default:'uuid_generate_v4()',
             },
             {
               name:'title',

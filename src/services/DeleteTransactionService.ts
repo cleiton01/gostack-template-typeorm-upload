@@ -10,11 +10,19 @@ class DeleteTransactionService {
     const transactionRepository = getCustomRepository(TransactionRepository);
     const transaction = await transactionRepository.findOne(id);
 
+
     if(!transaction){
       throw new AppError("transaction nao existe",400);
-    }else{
-      await transactionRepository.remove(transaction);
     }
+    console.log(`transaction - in proces - ${transaction.id}`);
+
+    const resultSet = await transactionRepository.createQueryBuilder()
+    .delete()
+    .from(Transaction)
+    .where("id = :id", { id: transaction.id })
+    .execute()
+    ;
+    console.log(resultSet);
   }
 }
 
